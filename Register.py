@@ -24,8 +24,14 @@ cpwd = driver.find_element(By.NAME, "confirm").send_keys("abcd$dcba")
 chk = driver.find_element(By.NAME, "agree")
 driver.execute_script("arguments[0].scrollIntoView({block:'center'});", chk)
 driver.execute_script("arguments[0].click();", chk)
+
+submit = driver.find_element(By.CSS_SELECTOR, "input.btn-primary[value='Continue']" )
+submit.submit()
+
 time.sleep(10)
-driver.refresh()
+
+
+driver.quit()
 
 
 
